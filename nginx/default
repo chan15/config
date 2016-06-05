@@ -1,16 +1,18 @@
-listen 80;
-root /var/www/html/;
-server_name  localhost.app;
-index index.php index.html index.htm;
-error_log /var/log/html-error.log;
+server {
+    listen 80;
+    root /var/www/html/;
+    server_name  localhost.app;
+    index index.php index.html index.htm;
+    error_log /var/log/html-error.log;
 
-location / {
-    try_files $uri $uri/ /index.php;
-}
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
 
-location ~ \.php$ {
-    fastcgi_split_path_info ^(.+\.php)(/.+)$;
-    fastcgi_pass unix:/var/run/php5-fpm.sock;
-    fastcgi_index index.php;
-    include fastcgi_params;
+    location ~ \.php$ {
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+    }
 }
