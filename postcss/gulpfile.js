@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 
 gulp.task('css', function () {
-    var postcss    = require('gulp-postcss');
+    var postcss = require('gulp-postcss');
     var processors = [
         require('autoprefixer'),
         require('precss'),
