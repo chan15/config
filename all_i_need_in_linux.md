@@ -15,7 +15,7 @@
 
 ---
 
-	composer require friendsofphp/php-cs-fixer
+    sudo composer require friendsofphp/php-cs-fixer
 
 ### nodejs
 
